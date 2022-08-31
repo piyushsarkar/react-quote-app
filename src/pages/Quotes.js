@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 
+import NoQuotesFound from '../components/quotes/NoQuotesFound';
 import QuoteList from '../components/quotes/QuoteList';
 import LoadingSpinner from '../components/UI/LoadingSpinner';
-import NoQuotesFound from '../components/quotes/NoQuotesFound';
 import useHttp from '../hooks/useHttp';
 import { getAllQuotes } from '../lib/api';
 
@@ -33,7 +33,6 @@ const Quotes = () => {
   if (status === 'completed' && loadedQuotes.length === 0) {
     return <NoQuotesFound />;
   }
-  console.log(loadedQuotes);
   return <QuoteList quotes={loadedQuotes} />;
 };
 export default Quotes;
